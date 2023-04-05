@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import SidebarWithHeader from "~/components/SideBar";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +10,11 @@ const Home: NextPage = () => {
         <meta name="description" content="Frenchs Forest Sydney Australia" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center"></main>
+      <main className="min-h-screen w-screen">
+        <SidebarWithHeader>
+          <></>
+        </SidebarWithHeader>
+      </main>
     </>
   );
 };
