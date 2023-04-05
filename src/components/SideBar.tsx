@@ -22,29 +22,47 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Divider,
 } from "@chakra-ui/react";
 import { type IconType } from "react-icons";
 import {
   FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiMap,
+  FiTruck,
+  FiTool,
+  FiAlertTriangle,
+  FiUsers,
+  FiInfo,
+  FiPhone,
+  FiDribbble,
+  FiBriefcase,
+  FiArchive,
+  FiCamera,
 } from "react-icons/fi";
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
 }
-const LinkItems: Array<LinkItemProps> = [
+const PublicLinkItems: Array<LinkItemProps> = [
   { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Location Maps", icon: FiMap },
+  { name: "Parking and Road Safety", icon: FiTruck },
+  { name: "Critical Incidents", icon: FiAlertTriangle },
+  { name: "Information for Tradespeople", icon: FiTool },
+];
+
+const ResidentLinkItems: Array<LinkItemProps> = [
+  { name: "Management Statement", icon: FiUsers },
+  { name: "Information for Residents", icon: FiInfo },
+  { name: "Useful Services for Residents", icon: FiPhone },
+  { name: "Booking Facilities", icon: FiDribbble },
+  { name: "Meeting Minutes", icon: FiArchive },
+  { name: "Executive Committee Members", icon: FiBriefcase },
+  { name: "Gallery", icon: FiCamera },
 ];
 
 export default function SidebarWithHeader({
@@ -54,7 +72,7 @@ export default function SidebarWithHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box minH="full">
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -98,12 +116,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+        <Text fontSize="2xl" fontWeight="bold">
+          Zenith Garden
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {PublicLinkItems.map((link) => (
+        <NavItem key={link.name} icon={link.icon}>
+          {link.name}
+        </NavItem>
+      ))}
+      <Divider className="my-4" />
+      {ResidentLinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
@@ -184,7 +208,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontFamily="monospace"
         fontWeight="bold"
       >
-        Logo
+        Zenith Garden
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
