@@ -49,7 +49,7 @@ interface LinkItemProps {
   path: string;
 }
 const PublicLinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome, path: "#" },
+  { name: "Home", icon: FiHome, path: "/" },
   { name: "Location Maps", icon: FiMap, path: "maps" },
   { name: "Parking and Road Safety", icon: FiTruck, path: "parking" },
   { name: "Critical Incidents", icon: FiAlertTriangle, path: "incidents" },
