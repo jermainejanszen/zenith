@@ -3,6 +3,7 @@ import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import SidebarWithHeader from "~/components/SideBar";
+import theme from "theme";
 
 import { api } from "~/utils/api";
 
@@ -14,7 +15,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <SidebarWithHeader>
           <Component {...pageProps} />
         </SidebarWithHeader>

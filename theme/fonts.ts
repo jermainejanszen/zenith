@@ -1,6 +1,3 @@
-const fonts = {
-    heading: "Montserrat",
-    body: "Montserrat",
-}
+const fonts = {}
 
 export default fonts;
