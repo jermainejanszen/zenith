@@ -1,5 +1,6 @@
 import {
   Button,
+  Container,
   Flex,
   Heading,
   Image,
@@ -72,23 +73,27 @@ const Home: NextPage = () => {
           </Flex>
         </Stack>
 
-        <p>
-          We are proud of our beautiful surroundings and hope that you will
-          support us in retaining the quiet and welcoming atmosphere of this
-          small community.
-        </p>
-        <p>
-          We would also ask that you look after and nurture the local fauna and
-          flora. We are blessed with an abundance of local mammals, reptiles and
-          birdlife and would ask that you ensure your visitors are aware of
-          these delights, along with the obvious, natural hazards of the creek
-          when walking around.
-        </p>
-        <p>
-          Building on the site finished around 2000 and since then, the estate
-          has developed the common facilities of the Pavilion, including
-          sporting and recreational amenities.
-        </p>
+        <Container maxW="6xl">
+          <Stack>
+            <p>
+              We are proud of our beautiful surroundings and hope that you will
+              support us in retaining the quiet and welcoming atmosphere of this
+              small community.
+            </p>
+            <p>
+              We would also ask that you look after and nurture the local fauna
+              and flora. We are blessed with an abundance of local mammals,
+              reptiles and birdlife and would ask that you ensure your visitors
+              are aware of these delights, along with the obvious, natural
+              hazards of the creek when walking around.
+            </p>
+            <p>
+              Building on the site finished around 2000 and since then, the
+              estate has developed the common facilities of the Pavilion,
+              including sporting and recreational amenities.
+            </p>
+          </Stack>
+        </Container>
       </main>
     </>
   );

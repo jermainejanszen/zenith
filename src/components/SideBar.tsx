@@ -42,6 +42,7 @@ import {
   FiArchive,
   FiCamera,
 } from "react-icons/fi";
+import Footer from "./Footer";
 
 interface LinkItemProps {
   name: string;
@@ -108,6 +109,7 @@ export default function SidebarWithHeader({
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
+      <Footer />
     </Box>
   );
 }
@@ -263,6 +265,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               </MenuItem>
               <MenuItem as={NextLink} href="contact">
                 Contact
+              </MenuItem>
+              <MenuItem as={NextLink} href="executive">
+                Executive Portal
               </MenuItem>
               <MenuDivider />
               <MenuItem>Sign out</MenuItem>
